@@ -1,0 +1,40 @@
+{
+  "profiles": {
+    "FileSystem-Backup": {
+      "commandName": "Project",
+      "commandLineArgs": "FileSystem backup"
+    },
+    "FileSystem-Retention": {
+      "commandName": "Project",
+      "commandLineArgs": "FileSystem retention"
+    },
+    "FileSystem-Restore": {
+      "commandName": "Project",
+      "commandLineArgs": "FileSystem restore"
+    },
+    "Azure-MSSQL-Backup": {
+      "commandName": "Project",
+      "commandLineArgs": "Azure-MSSQL backup"
+    },
+    "Azure-MSSQL-Retention": {
+      "commandName": "Project",
+      "commandLineArgs": "Azure-MSSQL retention"
+    },
+    "Azure-MSSQL-Restore": {
+      "commandName": "Project",
+      "commandLineArgs": "Azure-MSSQL restore"
+    },
+    "Azure-Basic-Backup": {
+      "commandName": "Project",
+      "commandLineArgs": "Azure-Basic backup"
+    },
+    "Azure-Basic-Retention": {
+      "commandName": "Project",
+      "commandLineArgs": "Azure-Basic retention"
+    },
+    "Azure-Basic-Restore": {
+      "commandName": "Project",
+      "commandLineArgs": "Azure-Basic restore"
+    }
+  }
+}

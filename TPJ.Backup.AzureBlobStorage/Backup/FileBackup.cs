@@ -178,46 +178,47 @@ public class FileBackup(IConfiguration configuration,
             { "FileExtension", CleanTagValue(fileChange.FileInfo.Extension) },
             { "RelativePath", CleanTagValue(fileChange.RelativePath) },
             { "FileName", CleanTagValue(fileChange.FileInfo.Name) },
-
-            { "Name", CleanTagValue(GetDatabaseNameFromFileName(fileChange.FileInfo.Name)) }
+            { "Name", CleanTagValue(GetNameFromFileName(fileChange.FileInfo.Name)) }
         };
     }
 
     private static Dictionary<string, string> GenerateMetadata(IFileChange fileChange)
     {
-        return new Dictionary<string, string>
+        var metadata = new Dictionary<string, string>
         {
             { "Compressed", fileChange.Settings.CompressFiles.ToString() },
             { "RelativePath", fileChange.RelativePath },
             { "FileExtension", fileChange.FileInfo.Extension },
             { "FileName", fileChange.FileInfo.Name },
             { "LastWriteTimeUtc", fileChange.FileInfo.LastWriteTimeUtc.ToString("dd/MM/yyyy HH:mm:ss") },
-
-            { "Name", GetDatabaseNameFromFileName(fileChange.FileInfo.Name) },
-            { "BackupDateTime", GetBackupDateTime(fileChange.FileInfo.Name).ToString("dd/MM/yyyy HH:mm:ss") },
+            { "Name", GetNameFromFileName(fileChange.FileInfo.Name) }
         };
+
+        // MSSQL backup logic
+        var backupDateTime = GetBackupDateTime(fileChange.FileInfo.Name);
+        if (backupDateTime.HasValue)        
+            metadata.Add("BackupDateTime", backupDateTime.Value.ToString("dd/MM/yyyy HH:mm:ss"));        
+
+        return metadata;
     }
 
-    private static string GetDatabaseNameFromFileName(string fileName)
+    private static string GetNameFromFileName(string fileName)
     {
         var databaseName = fileName.Contains("_backup_") ? fileName.Split("_backup_")[0] : fileName;
         return databaseName;
     }
 
-    public static DateTime GetBackupDateTime(string fileName)
+    public static DateTime? GetBackupDateTime(string fileName)
     {
         // Define the pattern to match the datetime part in the file name
         var pattern = @"(\d{4}_\d{2}_\d{2}_\d{6})";
 
         // Find the match using regex
         var match = Regex.Match(fileName, pattern);
-        if (match.Success)
-        {
-            string dateTimeString = match.Value;
-            // Parse the datetime string to a DateTime object
-            return DateTime.ParseExact(dateTimeString, "yyyy_MM_dd_HHmmss", CultureInfo.InvariantCulture);
-        }
+        if (!match.Success)
+            return null;
 
-        throw new ArgumentException("Invalid file name format.");
+        // Parse the datetime string to a DateTime object
+        return DateTime.ParseExact(match.Value, "yyyy_MM_dd_HHmmss", CultureInfo.InvariantCulture);
     }
 }

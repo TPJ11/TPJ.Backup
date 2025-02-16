@@ -1,0 +1,46 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.12.35527.113
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TPJ.BackupTest", "TPJ.Backup.MSSQL\TPJ.BackupTest.csproj", "{27C8B500-00B4-4122-ABB9-D4EAAF1C0B3C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TPJ.Backup.Shared", "TPJ.Backup.MSSQL.Shared\TPJ.Backup.Shared.csproj", "{D10FC197-0420-46D6-8706-1BCC589E1617}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TPJ.Backup", "TPJ.Backup.Folders\TPJ.Backup.csproj", "{4EEC5CB0-B75D-4493-8DFE-D48F23C55479}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TPJ.Backup.Store.AzureBlobStorage", "TPJ.Backup.AzureBlobStorage\TPJ.Backup.Store.AzureBlobStorage.csproj", "{397E1626-5730-464D-A2F4-67BDC72F002B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TPJ.Backup.Store.FileSystem", "TPJ.Backup.FileSystem\TPJ.Backup.Store.FileSystem.csproj", "{7C8A7102-F1EB-45B8-A484-A3B56E405396}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{27C8B500-00B4-4122-ABB9-D4EAAF1C0B3C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{27C8B500-00B4-4122-ABB9-D4EAAF1C0B3C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{27C8B500-00B4-4122-ABB9-D4EAAF1C0B3C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{27C8B500-00B4-4122-ABB9-D4EAAF1C0B3C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D10FC197-0420-46D6-8706-1BCC589E1617}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D10FC197-0420-46D6-8706-1BCC589E1617}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D10FC197-0420-46D6-8706-1BCC589E1617}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D10FC197-0420-46D6-8706-1BCC589E1617}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4EEC5CB0-B75D-4493-8DFE-D48F23C55479}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4EEC5CB0-B75D-4493-8DFE-D48F23C55479}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4EEC5CB0-B75D-4493-8DFE-D48F23C55479}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4EEC5CB0-B75D-4493-8DFE-D48F23C55479}.Release|Any CPU.Build.0 = Release|Any CPU
+		{397E1626-5730-464D-A2F4-67BDC72F002B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{397E1626-5730-464D-A2F4-67BDC72F002B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{397E1626-5730-464D-A2F4-67BDC72F002B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{397E1626-5730-464D-A2F4-67BDC72F002B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7C8A7102-F1EB-45B8-A484-A3B56E405396}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7C8A7102-F1EB-45B8-A484-A3B56E405396}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7C8A7102-F1EB-45B8-A484-A3B56E405396}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7C8A7102-F1EB-45B8-A484-A3B56E405396}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

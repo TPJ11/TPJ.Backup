@@ -1,0 +1,30 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net9.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Microsoft.Extensions.Configuration.EnvironmentVariables" Version="9.0.0" />
+		<PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="9.0.0" />
+		<PackageReference Include="Microsoft.Extensions.Logging" Version="9.0.1" />
+		<PackageReference Include="Microsoft.Extensions.Logging.Console" Version="9.0.1" />
+	</ItemGroup>
+	
+	<ItemGroup>
+	  <ProjectReference Include="..\TPJ.Backup.AzureBlobStorage\TPJ.Backup.Store.AzureBlobStorage.csproj" />
+	  <ProjectReference Include="..\TPJ.Backup.FileSystem\TPJ.Backup.Store.FileSystem.csproj" />
+	  <ProjectReference Include="..\TPJ.Backup.Folders\TPJ.Backup.csproj" />
+	  <ProjectReference Include="..\TPJ.Backup.MSSQL.Shared\TPJ.Backup.Shared.csproj" />
+	</ItemGroup>
+	
+	<ItemGroup>
+	  <None Update="appsettings.json">
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </None>
+	</ItemGroup>
+
+</Project>
